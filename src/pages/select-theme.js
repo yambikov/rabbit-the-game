@@ -47,8 +47,8 @@ function ChooseTheme({ numberOfPlayers }) {
   
 
   const handleStartGameClick = () => {
-    // Действия при нажатии на кнопку "Начать игру"
-    // Возможно, вы хотите перейти к игровому компоненту с выбранной темой
+    // Перенаправить пользователя на страницу игрока
+    window.location.href = '/player';
   };
 
   

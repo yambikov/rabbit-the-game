@@ -6,6 +6,7 @@ import Donate from './pages/donate';
 import SelectPlayers from './pages/select-players';
 import SelectTheme from './pages/select-theme';
 import ManualSelectTheme from './pages/manual-select-theme';
+import Player from './pages/player';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/select-players" element={<SelectPlayers />} />
           <Route path="/select-theme" element={<SelectTheme />} />
           <Route path="/manual-select-theme" element={<ManualSelectTheme />} />
+          <Route path="/player" element={<Player />} />
         </Routes>
       </div>
     </Router>

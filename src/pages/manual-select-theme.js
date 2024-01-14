@@ -3,8 +3,7 @@ import themes from '../components/themesData';
 
 function ManualThemeSelection() {
   const handleThemeButtonClick = (themeType) => {
-    console.log(`Нажата кнопка выбора темы: ${themeType}`);
-    // Здесь вы можете выполнить дополнительные действия при выборе темы
+    window.location.href = '/player';
   };
 
   const handleBackClick = () => {
