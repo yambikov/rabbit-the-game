@@ -13,10 +13,10 @@ function Donate() {
 
   return (
     <div>
+      <button onClick={handleBackClick}>Назад</button>
       <h2>Поддержите нас!</h2>
       <p>Ваша поддержка поможет нам развиваться.</p>
       <button onClick={handleDonateClick}>Сделать донат</button>
-      <button onClick={handleBackClick}>Назад</button>
     </div>
   );
 }

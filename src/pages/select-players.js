@@ -20,6 +20,7 @@ function SelectPlayers() {
 
   return (
     <div>
+      <button onClick={handleBackClick}>Назад</button>
       <h2>Выберите количество игроков:</h2>
       <label>
         Количество игроков:
@@ -32,7 +33,6 @@ function SelectPlayers() {
         </select>
       </label>
       {/* Добавьте свое игровое содержание здесь */}
-      <button onClick={handleBackClick}>Назад</button>
       <button onClick={handleNextClick}>Далее</button>
     </div>
   );
