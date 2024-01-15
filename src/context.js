@@ -2,24 +2,28 @@ import React, { createContext, useContext, useState } from 'react';
 
 const GameContext = createContext();
 
-export const useGameContext = () => {
-  const context = useContext(GameContext);
-  if (!context) {
-    throw new Error('useGameContext must be used within a GameProvider');
-  }
-  return context;
-};
-
 export const GameProvider = ({ children }) => {
   const [numberOfPlayers, setNumberOfPlayers] = useState(4);
+  const [players, setPlayers] = useState([]);
 
-  const updateNumberOfPlayers = (count) => {
-    setNumberOfPlayers(count);
+  const updateNumberOfPlayers = (newNumberOfPlayers) => {
+    setNumberOfPlayers(newNumberOfPlayers);
   };
 
+  const updatePlayers = (newPlayers) => {
+    setPlayers(newPlayers);
+  };
+
+  console.log(`GameProvider numberOfPlayers: ${numberOfPlayers}, players: ${players}`);
+
   return (
-    <GameContext.Provider value={{ numberOfPlayers, updateNumberOfPlayers }}>
+    <GameContext.Provider value={{ numberOfPlayers, players, updateNumberOfPlayers, updatePlayers }}>
       {children}
     </GameContext.Provider>
   );
+};
+
+
+export const useGameContext = () => {
+  return useContext(GameContext);
 };

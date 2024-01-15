@@ -1,37 +1,31 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useGameContext } from '../context';
 
 function SelectPlayers() {
   const { numberOfPlayers, updateNumberOfPlayers } = useGameContext();
+  const navigate = useNavigate();
 
-  const handleBackClick = () => {
-    window.location.href = '/';
-  };
-
-  const handleNextClick = () => {
-    window.location.href = '/select-theme';
-  };
-
-  const handlePlayerChange = (event) => {
-    const count = parseInt(event.target.value, 10);
-    updateNumberOfPlayers(count);
+  const handlePlayerSelection = () => {
+    navigate('/select-theme');
+    console.log(numberOfPlayers);
   };
 
   return (
     <div>
-      <button onClick={handleBackClick}>Назад</button>
-      <h2>Выберите количество игроков:</h2>
+      <button onClick={() => navigate('/')}>Назад</button>
+      <h2>Выбор количества игроков</h2>
       <label>
         Количество игроков:
-        <select value={numberOfPlayers} onChange={handlePlayerChange}>
-          {[...Array(9)].map((_, index) => (
-            <option key={index + 4} value={index + 4}>
-              {index + 4}
-            </option>
-          ))}
-        </select>
+        <input
+          type="number"
+          min="4"
+          value={numberOfPlayers}
+          onChange={(e) => updateNumberOfPlayers(Number(e.target.value))}
+        />
       </label>
-      <button onClick={handleNextClick}>Далее</button>
+      {/* Добавьте свое игровое содержание здесь */}
+      <button onClick={handlePlayerSelection}>Выбрать игроков</button>
     </div>
   );
 }

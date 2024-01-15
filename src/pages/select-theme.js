@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import themes from '../components/themesData';
+import { useGameContext } from '../context';
+import { useNavigate } from'react-router-dom';
 
-function ChooseTheme({ numberOfPlayers }) {
+
+
+function ChooseTheme() {
+  const { numberOfPlayers, players } = useGameContext();
   const [selectedTheme, setSelectedTheme] = useState(null);
+  const navigate = useNavigate();
+
+  console.log(`ChooseTheme numberOfPlayers: ${numberOfPlayers}, players: ${players}`);
 
   // Используйте useEffect для выбора случайной темы при монтировании компонента
   useEffect(() => {
@@ -12,11 +20,14 @@ function ChooseTheme({ numberOfPlayers }) {
 
   const handleBackClick = () => {
     // Вернуть пользователя к выбору количества игроков
-    window.location.href = '/select-players';
+    //window.location.href = '/select-players';
+    navigate('/select-players');
+
   };
 
   const handleChooseThemeClick = () => {
-    window.location.href = '/manual-select-theme';
+    //window.location.href = '/manual-select-theme';
+    navigate('/manual-select-theme');
   };
 
   // const handleRandomThemeClick = () => {
@@ -43,12 +54,15 @@ function ChooseTheme({ numberOfPlayers }) {
   
     // Установить выбранную тему в состояние
     setSelectedTheme(randomThemeType);
+
+    console.log(`Выбрана случайная тема: ${selectedTheme}`);
   };
   
 
   const handleStartGameClick = () => {
     // Перенаправить пользователя на страницу игрока
-    window.location.href = '/player';
+    // window.location.href = '/player';
+    navigate('/player')
   };
 
   
