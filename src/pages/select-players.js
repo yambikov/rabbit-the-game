@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useGameContext } from '../context';
 
 function SelectPlayers() {
-  const [numberOfPlayers, setNumberOfPlayers] = useState(4);
+  const { numberOfPlayers, updateNumberOfPlayers } = useGameContext();
 
   const handleBackClick = () => {
-    // Вернуть пользователя на домашнюю страницу
     window.location.href = '/';
   };
 
   const handleNextClick = () => {
-    // Направить пользователя на следующую страницу
     window.location.href = '/select-theme';
   };
 
   const handlePlayerChange = (event) => {
-    // Обработчик изменения количества игроков
-    setNumberOfPlayers(parseInt(event.target.value, 10));
+    const count = parseInt(event.target.value, 10);
+    updateNumberOfPlayers(count);
   };
 
   return (
@@ -32,7 +31,6 @@ function SelectPlayers() {
           ))}
         </select>
       </label>
-      {/* Добавьте свое игровое содержание здесь */}
       <button onClick={handleNextClick}>Далее</button>
     </div>
   );

@@ -1,22 +1,21 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useGameContext } from '../context';
 
 function Player() {
-  const { playerId } = useParams();
+  const { numberOfPlayers } = useGameContext();
 
   const handleBackClick = () => {
-    // Вернуть пользователя на предыдущую страницу
     window.history.back();
   };
 
   const handleOpenWordClick = () => {
-    // Здесь можете добавить логику для открытия слова
-    console.log(`Игрок ${playerId} открывает слово`);
+    console.log(`Игрок открывает слово из общего пула для ${numberOfPlayers} игроков`);
   };
 
   return (
     <div>
-      <h2>Игрок {playerId}</h2>
+      <h2>Игрок</h2>
+      <p>Количество игроков: {numberOfPlayers}</p>
       <button onClick={handleBackClick}>Назад</button>
       <button onClick={handleOpenWordClick}>Открыть слово</button>
     </div>
