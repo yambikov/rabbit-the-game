@@ -1,3 +1,5 @@
+// rules.js
+
 import React, { useState } from 'react';
 
 function Rules() {

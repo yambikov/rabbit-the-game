@@ -1,14 +1,18 @@
+// manual-select-theme.js
+
 import React from 'react';
 import themes from '../components/themesData';
+import { useNavigate } from'react-router-dom';
 
 function ManualThemeSelection() {
-  const handleThemeButtonClick = (themeType) => {
-    window.location.href = '/player';
+  const navigate = useNavigate();
+  const handleThemeButtonClick = () => {
+    navigate('/player');
   };
 
   const handleBackClick = () => {
-    // Вернуть пользователя к выбору количества игроков
-    window.location.href = '/select-theme';
+    navigate('/select-theme');
+
   };
 
   return (

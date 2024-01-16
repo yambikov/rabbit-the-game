@@ -1,6 +1,8 @@
+// app.js
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/main';
+import Main from './pages/main';
 import Rules from './pages/rules';
 import Donate from './pages/donate';
 import SelectPlayers from './pages/select-players';
@@ -15,7 +17,7 @@ function App() {
       <GameProvider>
         <div>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Main />} />
             <Route path="/rules" element={<Rules />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/select-players" element={<SelectPlayers />} />

@@ -1,3 +1,4 @@
+// select-theme.js
 import React, { useState, useEffect } from 'react';
 import themes from '../components/themesData';
 import { useGameContext } from '../context';
@@ -6,11 +7,11 @@ import { useNavigate } from'react-router-dom';
 
 
 function ChooseTheme() {
-  const { numberOfPlayers, players } = useGameContext();
+  const { numberOfPlayers } = useGameContext();
   const [selectedTheme, setSelectedTheme] = useState(null);
   const navigate = useNavigate();
 
-  console.log(`ChooseTheme numberOfPlayers: ${numberOfPlayers}, players: ${players}`);
+  console.log(`ChooseTheme numberOfPlayers: ${numberOfPlayers}`);
 
   // Используйте useEffect для выбора случайной темы при монтировании компонента
   useEffect(() => {
@@ -54,8 +55,6 @@ function ChooseTheme() {
   
     // Установить выбранную тему в состояние
     setSelectedTheme(randomThemeType);
-
-    console.log(`Выбрана случайная тема: ${selectedTheme}`);
   };
   
 
