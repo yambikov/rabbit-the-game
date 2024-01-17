@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function Player() {
   const {
     getCurrentPlayer,
-    moveToNextPlayer,
+    // moveToNextPlayer,
     gameStarted,
     numberOfPlayers,
     currentPlayerIndex,
@@ -15,24 +15,24 @@ function Player() {
 
   useEffect(() => {
     if (!gameStarted) {
-      navigate('/');
-    }
-
-    if (gameStarted && currentPlayerIndex >= numberOfPlayers) {
-      endGame();
       navigate('/finish');
     }
+
+    // if (gameStarted && currentPlayerIndex >= numberOfPlayers) {
+    //   endGame();
+    //   navigate('/finish');
+    // }
   }, [gameStarted, currentPlayerIndex, numberOfPlayers, navigate, endGame]);
 
   const currentPlayer = getCurrentPlayer();
 
   const handleOpenWordClick = () => {
-    moveToNextPlayer();
-    navigate(`/next-player/${currentPlayer?.id}`); // Передаем ID игрока на следующую страницу
+    // moveToNextPlayer();
+    navigate('/next-player');
   };
 
   if (!gameStarted) {
-    return null;
+    return null; 
   }
 
   return (

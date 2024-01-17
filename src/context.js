@@ -50,6 +50,15 @@ export const GameProvider = ({ children }) => {
     setCurrentSubtheme(''); // Сброс подтемы в конце игры
   };
 
+  // Функция для сброса игры
+  const resetGame = () => {
+    setCurrentPlayerIndex(0); // Сброс текущего индекса игрока
+    setGameStarted(false); // Установить состояние начала игры в false
+    setCurrentTheme(''); // Сброс текущей темы
+    setCurrentSubtheme(''); // Сброс текущей подтемы
+    // ... и любые другие состояния, которые нужно сбросить
+  };
+
   return (
     <GameContext.Provider
       value={{
@@ -65,7 +74,8 @@ export const GameProvider = ({ children }) => {
         getCurrentPlayer,
         moveToNextPlayer,
         endGame,
-        chooseRandomSubtheme // Добавляем эту функцию в контекст
+        chooseRandomSubtheme,
+        resetGame,
       }}
     >
       {children}
