@@ -9,6 +9,8 @@ import SelectPlayers from './pages/select-players';
 import SelectTheme from './pages/select-theme';
 import ManualSelectTheme from './pages/manual-select-theme';
 import Player from './pages/player';
+import NextPlayer from './pages/next-player';
+import Finish from './pages/finish';
 import { GameProvider } from './context'; // Импортируем провайдер
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
             <Route path="/select-theme" element={<SelectTheme />} />
             <Route path="/manual-select-theme" element={<ManualSelectTheme />} />
             <Route path="/player" element={<Player />} />
+            <Route path="/next-player" element={<NextPlayer />} />
+            <Route path="/finish" element={<Finish />} />
           </Routes>
         </div>
       </GameProvider>

@@ -10,6 +10,7 @@ function ChooseTheme() {
   const { numberOfPlayers } = useGameContext();
   const [selectedTheme, setSelectedTheme] = useState(null);
   const navigate = useNavigate();
+  const { startGame, chooseRandomSubtheme } = useGameContext();
 
   console.log(`ChooseTheme numberOfPlayers: ${numberOfPlayers}`);
 
@@ -31,18 +32,6 @@ function ChooseTheme() {
     navigate('/manual-select-theme');
   };
 
-  // const handleRandomThemeClick = () => {
-  //   // console.log("Нажата кнопка Случайная тема либо обновлена страница");
-  //   // Выбрать случайную тему
-  //   const allThemes = Object.keys(themes);
-  //   const randomThemeType = allThemes[Math.floor(Math.random() * allThemes.length)];
-  //   // ниже реализация выбора случайного слова
-  //   // const themeOptions = themes[randomThemeType];
-  //   // const randomTheme = themeOptions[Math.floor(Math.random() * themeOptions.length)];
-
-  //   // Установить выбранную тему в состояние
-  //   setSelectedTheme(randomThemeType);
-  // };
 
   const handleRandomThemeClick = () => {
     // Выбрать случайную тему
@@ -56,13 +45,21 @@ function ChooseTheme() {
     // Установить выбранную тему в состояние
     setSelectedTheme(randomThemeType);
   };
-  
 
-  const handleStartGameClick = () => {
-    // Перенаправить пользователя на страницу игрока
-    // window.location.href = '/player';
-    navigate('/player')
-  };
+  // Внутри handleStartGameClick в select-theme.js
+
+
+const handleStartGameClick = () => {
+  if (selectedTheme) {
+    startGame(selectedTheme); // Начать игру с выбранной темой
+    chooseRandomSubtheme(selectedTheme); // Выбираем случайную подтему
+    navigate('/player');
+  } else {
+    alert('Пожалуйста, выберите тему!');
+  }
+};
+
+  
 
   
 

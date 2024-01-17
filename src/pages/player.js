@@ -1,28 +1,44 @@
-// player.js
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useGameContext } from '../context';
-import { useNavigate } from'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 
 function Player() {
+  const {
+    getCurrentPlayer,
+    moveToNextPlayer,
+    gameStarted,
+    numberOfPlayers,
+    currentPlayerIndex,
+    endGame,
+  } = useGameContext();
   const navigate = useNavigate();
-  const { numberOfPlayers } = useGameContext();
 
-  const handleBackClick = () => {
-    navigate(-1);
-  };
+  useEffect(() => {
+    if (!gameStarted) {
+      navigate('/');
+    }
+
+    if (gameStarted && currentPlayerIndex >= numberOfPlayers) {
+      endGame();
+      navigate('/finish');
+    }
+  }, [gameStarted, currentPlayerIndex, numberOfPlayers, navigate, endGame]);
+
+  const currentPlayer = getCurrentPlayer();
 
   const handleOpenWordClick = () => {
-    // Ваша логика для открытия слова
-    console.log(`Игрок открывает слово`);
+    moveToNextPlayer();
+    navigate('/next-player');
   };
+
+  if (!gameStarted) {
+    return null; 
+  }
 
   return (
     <div>
       <h2>Игрок</h2>
-      <p>Количество игроков: {numberOfPlayers}</p>
-      <button onClick={handleBackClick}>Назад</button>
+      <p>ID игрока: {currentPlayer?.id}</p>
       <button onClick={handleOpenWordClick}>Открыть слово</button>
     </div>
   );
