@@ -28,11 +28,11 @@ function Player() {
 
   const handleOpenWordClick = () => {
     moveToNextPlayer();
-    navigate('/next-player');
+    navigate(`/next-player/${currentPlayer?.id}`); // Передаем ID игрока на следующую страницу
   };
 
   if (!gameStarted) {
-    return null; 
+    return null;
   }
 
   return (
