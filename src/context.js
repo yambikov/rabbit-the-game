@@ -1,11 +1,10 @@
-// context.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import themes from './components/themesData';
 
 const GameContext = createContext();
 
 export const GameProvider = ({ children }) => {
-  const [numberOfPlayers, setNumberOfPlayers] = useState(4);
+  const [numberOfPlayers, setNumberOfPlayers] = useState(4); // Установите значение по умолчанию, например, 4
   const [players, setPlayers] = useState([]);
   const [currentTheme, setCurrentTheme] = useState('');
   const [currentSubtheme, setCurrentSubtheme] = useState('');
@@ -26,12 +25,19 @@ export const GameProvider = ({ children }) => {
     }
   }, []);
 
+  useEffect(() => {
+    saveGameState();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [numberOfPlayers, players, currentTheme, currentSubtheme, currentPlayerIndex, gameStarted]);
+
   const updateNumberOfPlayers = (newNumberOfPlayers) => {
     setNumberOfPlayers(newNumberOfPlayers);
+    console.log(`updateNumberOfPlayers: ${newNumberOfPlayers}`);
   };
 
   const updatePlayers = (newPlayers) => {
     setPlayers(newPlayers);
+    console.log(`updatePlayers: ${JSON.stringify(newPlayers)}`);
   };
 
   const startGame = (theme) => {
@@ -65,16 +71,14 @@ export const GameProvider = ({ children }) => {
     setCurrentSubtheme(''); // Сброс подтемы в конце игры
   };
 
-  // Функция для сброса игры
   const resetGame = () => {
-     setNumberOfPlayers(4);
+    setNumberOfPlayers(4);
     setPlayers([]);
     setCurrentPlayerIndex(0);
     setCurrentSubtheme('');
     setCurrentTheme('');
     setGameStarted(false);
-    console.log('Game reset to default values');
-    sessionStorage.removeItem('gameState')
+    sessionStorage.removeItem('gameState');
   };
 
   const saveGameState = () => {
@@ -107,7 +111,6 @@ export const GameProvider = ({ children }) => {
         endGame,
         chooseRandomSubtheme,
         resetGame,
-        saveGameState,
       }}
     >
       {children}

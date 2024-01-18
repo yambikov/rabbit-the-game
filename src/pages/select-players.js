@@ -1,12 +1,14 @@
-
-// select-players.js
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useGameContext } from '../context';
 
 function SelectPlayers() {
-  const { numberOfPlayers, updateNumberOfPlayers, updatePlayers, saveGameState } = useGameContext();
+  const {
+    numberOfPlayers,
+    updateNumberOfPlayers,
+    updatePlayers,
+ // Обратите внимание, что вы уже импортировали navigate
+  } = useGameContext();
   const navigate = useNavigate();
 
   const handlePlayerSelection = () => {
@@ -19,18 +21,16 @@ function SelectPlayers() {
     // Выбираем случайным образом игрока и помечаем его как "Заяц"
     const rabbitIndex = Math.floor(Math.random() * numberOfPlayers);
     playersArray[rabbitIndex].name = 'Заяц';
-
+    // saveGameState();
     // Обновляем массив игроков в контексте
     updatePlayers(playersArray);
-
     // Обновляем количество игроков в контексте
     updateNumberOfPlayers(numberOfPlayers);
-
-    saveGameState();
 
     // Переходим на следующую страницу
     navigate('/select-theme');
   };
+
 
   return (
     <div>
@@ -39,8 +39,10 @@ function SelectPlayers() {
       <label>
         Количество игроков:
         <input
+          id="name"
           type="number"
           min="4"
+          autoComplete="off"
           value={numberOfPlayers}
           onChange={(e) => updateNumberOfPlayers(Number(e.target.value))}
         />

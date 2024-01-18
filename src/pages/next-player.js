@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function NextPlayer() {
 
-  const { getCurrentPlayer, currentSubtheme, moveToNextPlayer, numberOfPlayers, currentPlayerIndex, saveGameState } = useGameContext();
+  const { getCurrentPlayer, currentSubtheme, moveToNextPlayer, numberOfPlayers, currentPlayerIndex } = useGameContext();
 
   const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ function NextPlayer() {
   const handleNextPlayerOrFinishGame = () => {
     if (currentPlayerIndex < numberOfPlayers - 1) {
       moveToNextPlayer();
-      saveGameState();
+      // saveGameState();
       navigate('/player');
     } else {
       navigate('/finish');

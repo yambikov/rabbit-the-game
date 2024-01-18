@@ -6,38 +6,30 @@ import { useNavigate } from 'react-router-dom';
 function Player() {
   const {
     getCurrentPlayer,
-    // moveToNextPlayer,
     gameStarted,
     numberOfPlayers,
     currentPlayerIndex,
-    endGame,
-    saveGameState
+    endGame
   } = useGameContext();
-  
-  
+
+
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!gameStarted) {
-      saveGameState();
+      // saveGameState();
       navigate('/finish');
     }
-
-    // if (gameStarted && currentPlayerIndex >= numberOfPlayers) {
-    //   endGame();
-    //   navigate('/finish');
-    // }
-  }, [gameStarted, currentPlayerIndex, numberOfPlayers, navigate, endGame, saveGameState]);
+  }, [gameStarted, currentPlayerIndex, numberOfPlayers, navigate, endGame]);
 
   const currentPlayer = getCurrentPlayer();
 
   const handleOpenWordClick = () => {
-    // moveToNextPlayer();
     navigate('/next-player');
   };
 
   if (!gameStarted) {
-    return null; 
+    return null;
   }
 
   return (
