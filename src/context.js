@@ -26,18 +26,6 @@ export const GameProvider = ({ children }) => {
     }
   }, []);
 
-  const saveGameState = () => {
-    const state = {
-      numberOfPlayers,
-      players,
-      currentTheme,
-      currentSubtheme,
-      currentPlayerIndex,
-      gameStarted,
-    };
-    sessionStorage.setItem('gameState', JSON.stringify(state));
-  };
-
   const updateNumberOfPlayers = (newNumberOfPlayers) => {
     setNumberOfPlayers(newNumberOfPlayers);
   };
@@ -79,11 +67,27 @@ export const GameProvider = ({ children }) => {
 
   // Функция для сброса игры
   const resetGame = () => {
-    setCurrentPlayerIndex(0); // Сброс текущего индекса игрока
-    setGameStarted(false); // Установить состояние начала игры в false
-    setCurrentTheme(''); // Сброс текущей темы
-    setCurrentSubtheme(''); // Сброс текущей подтемы
-    // ... и любые другие состояния, которые нужно сбросить
+     setNumberOfPlayers(4);
+    setPlayers([]);
+    setCurrentPlayerIndex(0);
+    setCurrentSubtheme('');
+    setCurrentTheme('');
+    setGameStarted(false);
+    console.log('Game reset to default values');
+    sessionStorage.removeItem('gameState')
+  };
+
+  const saveGameState = () => {
+    const state = {
+      numberOfPlayers,
+      players,
+      currentTheme,
+      currentSubtheme,
+      currentPlayerIndex,
+      gameStarted,
+    };
+    console.log('Saving game state:', state);
+    sessionStorage.setItem('gameState', JSON.stringify(state));
   };
 
   return (
@@ -103,7 +107,7 @@ export const GameProvider = ({ children }) => {
         endGame,
         chooseRandomSubtheme,
         resetGame,
-        saveGameState
+        saveGameState,
       }}
     >
       {children}

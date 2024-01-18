@@ -28,9 +28,6 @@ function SelectPlayers() {
 
     saveGameState();
 
-    // Сохраняем массив игроков в локальное хранилище
-    // localStorage.setItem('players', JSON.stringify(playersArray));
-
     // Переходим на следующую страницу
     navigate('/select-theme');
   };

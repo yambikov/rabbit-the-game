@@ -6,21 +6,16 @@ import { useNavigate } from 'react-router-dom';
 
 function Main() {
   
-  const { resetGame, updateNumberOfPlayers, saveGameState } = useGameContext();
+  const { resetGame,  saveGameState } = useGameContext();
   const navigate = useNavigate();
 
   const handlePlayClick = () => {
-    // Сбрасываем количество игроков до 4
-    updateNumberOfPlayers(4);
     resetGame();
-    saveGameState();
+    // saveGameState();
 
-    // Записываем новое количество игроков в локальное хранилище
-    // localStorage.setItem('numberOfPlayers', '4');
-
-    // Перенаправляем пользователя на страницу выбора игроков с использованием useNavigate
     navigate('/select-players');
   };
+
 
   return (
     <div>
