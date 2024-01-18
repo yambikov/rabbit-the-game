@@ -7,12 +7,9 @@ import { useNavigate } from'react-router-dom';
 
 
 function ChooseTheme() {
-  const { numberOfPlayers } = useGameContext();
   const [selectedTheme, setSelectedTheme] = useState(null);
   const navigate = useNavigate();
-  const { startGame, chooseRandomSubtheme } = useGameContext();
-
-  console.log(`ChooseTheme numberOfPlayers: ${numberOfPlayers}`);
+  const { startGame, chooseRandomSubtheme, saveGameState } = useGameContext();
 
   // Используйте useEffect для выбора случайной темы при монтировании компонента
   useEffect(() => {
@@ -53,6 +50,7 @@ const handleStartGameClick = () => {
   if (selectedTheme) {
     startGame(selectedTheme); // Начать игру с выбранной темой
     chooseRandomSubtheme(selectedTheme); // Выбираем случайную подтему
+    saveGameState(); // Сохранение состояния игры
     navigate('/player');
   } else {
     alert('Пожалуйста, выберите тему!');

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useGameContext } from '../context';
 
 function ManualThemeSelection() {
-  const { startGame, chooseRandomSubtheme } = useGameContext();
+  const { startGame, chooseRandomSubtheme, saveGameState } = useGameContext();
   const navigate = useNavigate();
 
   const handleThemeButtonClick = (themeType) => {
@@ -14,6 +14,7 @@ function ManualThemeSelection() {
     startGame(themeType);
     // Выбираем случайную подтему для темы
     chooseRandomSubtheme(themeType);
+    saveGameState(); // Сохранение состояния игры
     // Перенаправляем пользователя на страницу игрока
     navigate('/player');
   };

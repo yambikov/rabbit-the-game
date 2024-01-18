@@ -1,3 +1,4 @@
+// player.js
 import React, { useEffect } from 'react';
 import { useGameContext } from '../context';
 import { useNavigate } from 'react-router-dom';
@@ -10,11 +11,15 @@ function Player() {
     numberOfPlayers,
     currentPlayerIndex,
     endGame,
+    saveGameState
   } = useGameContext();
+  
+  
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!gameStarted) {
+      saveGameState();
       navigate('/finish');
     }
 
@@ -22,7 +27,7 @@ function Player() {
     //   endGame();
     //   navigate('/finish');
     // }
-  }, [gameStarted, currentPlayerIndex, numberOfPlayers, navigate, endGame]);
+  }, [gameStarted, currentPlayerIndex, numberOfPlayers, navigate, endGame, saveGameState]);
 
   const currentPlayer = getCurrentPlayer();
 

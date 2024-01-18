@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState } from 'react';
-import themes from './components/themesData'; // Убедитесь, что путь к themesData.js правильный
+// context.js
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import themes from './components/themesData';
 
 const GameContext = createContext();
 
@@ -10,6 +11,32 @@ export const GameProvider = ({ children }) => {
   const [currentSubtheme, setCurrentSubtheme] = useState('');
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
+
+  useEffect(() => {
+    // Восстановление состояния из сессионного хранилища при монтировании
+    const savedState = sessionStorage.getItem('gameState');
+    if (savedState) {
+      const state = JSON.parse(savedState);
+      setNumberOfPlayers(state.numberOfPlayers);
+      setPlayers(state.players);
+      setCurrentTheme(state.currentTheme);
+      setCurrentSubtheme(state.currentSubtheme);
+      setCurrentPlayerIndex(state.currentPlayerIndex);
+      setGameStarted(state.gameStarted);
+    }
+  }, []);
+
+  const saveGameState = () => {
+    const state = {
+      numberOfPlayers,
+      players,
+      currentTheme,
+      currentSubtheme,
+      currentPlayerIndex,
+      gameStarted,
+    };
+    sessionStorage.setItem('gameState', JSON.stringify(state));
+  };
 
   const updateNumberOfPlayers = (newNumberOfPlayers) => {
     setNumberOfPlayers(newNumberOfPlayers);
@@ -76,6 +103,7 @@ export const GameProvider = ({ children }) => {
         endGame,
         chooseRandomSubtheme,
         resetGame,
+        saveGameState
       }}
     >
       {children}
