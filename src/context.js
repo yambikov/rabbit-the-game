@@ -90,7 +90,6 @@ export const GameProvider = ({ children }) => {
       currentPlayerIndex,
       gameStarted,
     };
-    console.log('Saving game state:', state);
     sessionStorage.setItem('gameState', JSON.stringify(state));
   };
 
