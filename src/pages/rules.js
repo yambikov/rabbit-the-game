@@ -1,8 +1,10 @@
 // rules.js
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Rules() {
+  const navigate = useNavigate();
   const [rulesContent] = useState(`
     Правило 1: ...
     Правило 2: ...
@@ -12,7 +14,7 @@ function Rules() {
 
   const handleOkayClick = () => {
     // Вернуть пользователя на домашнюю страницу
-    window.location.href = '/';
+    navigate('/');
   };
 
   return (

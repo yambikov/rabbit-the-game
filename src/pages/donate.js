@@ -7,7 +7,7 @@ function Donate() {
   const navigate = useNavigate();
   const handleDonateClick = () => {
     // Перенаправить пользователя на страницу доната
-    window.location.href = 'https://www.tinkoff.ru/cf/9yxpoIlkDJH';
+    window.location.href = 'https://www.tinkoff.ru/cf/ATUcqxcURqp';
   };
 
   const handleBackClick = () => {
