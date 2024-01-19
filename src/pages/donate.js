@@ -1,16 +1,18 @@
 // donate.js
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Donate() {
+  const navigate = useNavigate();
   const handleDonateClick = () => {
     // Перенаправить пользователя на страницу доната
-    window.location.href = 'ссылка_на_ваш_сервис_доната';
+    window.location.href = 'https://www.tinkoff.ru/cf/9yxpoIlkDJH';
   };
 
   const handleBackClick = () => {
     // Вернуть пользователя на домашнюю страницу
-    window.location.href = '/';
+    navigate('/');
   };
 
   return (
