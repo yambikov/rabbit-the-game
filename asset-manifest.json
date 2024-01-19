@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/rabbit-the-game/static/css/main.e6c13ad2.css",
+    "main.js": "/rabbit-the-game/static/js/main.5201fa44.js",
+    "static/js/787.6688d6bf.chunk.js": "/rabbit-the-game/static/js/787.6688d6bf.chunk.js",
+    "index.html": "/rabbit-the-game/index.html",
+    "main.e6c13ad2.css.map": "/rabbit-the-game/static/css/main.e6c13ad2.css.map",
+    "main.5201fa44.js.map": "/rabbit-the-game/static/js/main.5201fa44.js.map",
+    "787.6688d6bf.chunk.js.map": "/rabbit-the-game/static/js/787.6688d6bf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.5201fa44.js"
+  ]
+}
