@@ -7,8 +7,8 @@ function SelectPlayers() {
     numberOfPlayers,
     updateNumberOfPlayers,
     updatePlayers,
- // Обратите внимание, что вы уже импортировали navigate
   } = useGameContext();
+
   const navigate = useNavigate();
 
   const handlePlayerSelection = () => {
@@ -31,26 +31,32 @@ function SelectPlayers() {
     navigate('/select-theme');
   };
 
+  
+    // Функция для увеличения количества игроков
+    const incrementPlayers = () => {
+      updateNumberOfPlayers(numberOfPlayers + 1);
+    };
+  
+    // Функция для уменьшения количества игроков
+    const decrementPlayers = () => {
+      if (numberOfPlayers > 4) {
+        updateNumberOfPlayers(numberOfPlayers - 1);
+      }
+    };
 
-  return (
-    <div>
-      <button onClick={() => navigate('/')}>Назад</button>
-      <h2>Выбор количества игроков</h2>
-      <label>
-        Количество игроков:
-        <input
-          id="name"
-          type="number"
-          min="4"
-          autoComplete="off"
-          value={numberOfPlayers}
-          onChange={(e) => updateNumberOfPlayers(Number(e.target.value))}
-        />
-      </label>
-      {/* Добавьте свое игровое содержание здесь */}
-      <button onClick={handlePlayerSelection}>Выбрать игроков</button>
-    </div>
-  );
-}
 
-export default SelectPlayers;
+    return (
+      <div>
+        <button onClick={() => navigate('/')}>Назад</button>
+        <h2>Выбор количества игроков</h2>
+        <div>
+          <button onClick={decrementPlayers} disabled={numberOfPlayers <= 4}>-</button>
+          <span>{numberOfPlayers}</span>
+          <button onClick={incrementPlayers}>+</button>
+        </div>
+        <button onClick={handlePlayerSelection}>Выбрать игроков</button>
+      </div>
+    );
+  }
+  
+  export default SelectPlayers;

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Main() {
 
-  const { resetGame,  saveGameState} = useGameContext();
+  const { resetGame } = useGameContext();
   const navigate = useNavigate();
 
   const handlePlayClick = () => {

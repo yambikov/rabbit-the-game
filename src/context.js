@@ -32,19 +32,12 @@ export const GameProvider = ({ children }) => {
 
   const updateNumberOfPlayers = (newNumberOfPlayers) => {
     setNumberOfPlayers(newNumberOfPlayers);
-    console.log(`updateNumberOfPlayers: ${newNumberOfPlayers}`);
   };
 
   const updatePlayers = (newPlayers) => {
     setPlayers(newPlayers);
-    console.log(`updatePlayers: ${JSON.stringify(newPlayers)}`);
   };
 
-  const startGame = (theme) => {
-    setCurrentTheme(theme);
-    chooseRandomSubtheme(theme); // Выбираем случайную подтему при старте игры
-    setGameStarted(true);
-  };
 
   const chooseRandomSubtheme = (theme) => {
     const subthemes = themes[theme];
@@ -64,11 +57,18 @@ export const GameProvider = ({ children }) => {
     }
   };
 
+  const startGame = (theme) => {
+    setCurrentTheme(theme);
+    chooseRandomSubtheme(theme);
+    setGameStarted(true);
+  };
+
+
   const endGame = () => {
-    setCurrentPlayerIndex(0);
-    setGameStarted(false);
-    setCurrentTheme('');
-    setCurrentSubtheme(''); // Сброс подтемы в конце игры
+    // setCurrentPlayerIndex(0);
+    // setGameStarted(false);
+    // setCurrentTheme('');
+    // setCurrentSubtheme(''); // Сброс подтемы в конце игры
   };
 
   const resetGame = () => {
@@ -78,7 +78,7 @@ export const GameProvider = ({ children }) => {
     setCurrentSubtheme('');
     setCurrentTheme('');
     setGameStarted(false);
-    sessionStorage.removeItem('gameState');
+    // sessionStorage.removeItem('gameState');
   };
 
   const saveGameState = () => {
