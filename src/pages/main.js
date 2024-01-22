@@ -3,6 +3,7 @@
 import React from 'react';
 import { useGameContext } from '../context';
 import { useNavigate } from 'react-router-dom';
+import rabbitImage from '../images/Rabbit.jpg';
 
 function Main() {
 
@@ -12,17 +13,20 @@ function Main() {
   const handlePlayClick = () => {
     resetGame();
     // saveGameState();
-    
+
     navigate('/select-players');
   };
 
 
   return (
-    <div>
-      <h2>Стартовый экран</h2>
-      <button onClick={() => navigate('/rules')}>Правила</button>
-      <button onClick={() => navigate('/donate')}>Донат</button>
-      <button onClick={handlePlayClick}>Играть</button>
+    <div className='main'>
+      <h2 className='main__header'>Заяц</h2>
+     <img className="main__img" src={rabbitImage} alt="rabbit" />
+      <div className="main__buttons-container">
+        <button className="button button__big button__colour_purple" onClick={() => navigate('/rules')}>Правила</button>
+        <button className="button button__big button__colour_green" onClick={() => navigate('/donate')}>Донат</button>
+        <button className="button button__big button__colour_yellow" onClick={handlePlayClick}>Играть</button>
+      </div>
     </div>
   );
 }

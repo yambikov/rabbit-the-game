@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <GameProvider>
-        <div>
+        <div className='root brd'>
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/rules" element={<Rules />} />

@@ -1,13 +1,146 @@
+@import url(./vendor/normalize.css);
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: hwb(0 10% 90%);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* Стили для устройств с шириной экрана от 300px до 415 */
+@media screen and (min-width: 300px) and (max-width: 415px) {
+}
+
+/* Стили для устройств с шириной экрана более 415px */
+@media screen and (min-width: 416px) {
+  .root {
+    width: 430px;
+    height: 932px;
+    background: var(
+      --Radial,
+      radial-gradient(116.44% 38.73% at 50% 41.26%, #4a0150 0%, #010135 100%)
+    );
+    margin: 0 auto;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Распределение контента */
+    height: 100%; /* Растягиваем на всю высоту родителя */
+    align-items: center;
+    width: 100%;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden; /* Скрываем части изображения, выходящие за границы */
+    /* Остальные стили для .main */
+  }
+
+  .main__img {
+    position: absolute; /* Абсолютное позиционирование для изображения */
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    height: auto; /* Высота автоматически регулируется */
+    z-index: 0;
+    margin-top: 80px;
+  }
+
+  .main__buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 48px 60px 48px;
+    align-items: stretch;
+    z-index: 1;
+  }
+
+  .main__header {
+    margin: 0;
+    color: #fff7d4;
+    text-shadow: 4px 11px 0px #001643;
+    font-family: "RF Krabuler";
+    font-size: 150px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+    z-index: 1;
+  }
+
+  .button {
+    box-shadow: 0px 1.765px 0px 0px #fffeed inset,
+      1.765px 5.295px 0px 0px #001643;
+    border: none;
+  }
+
+  .button:hover {
+    cursor: pointer;
+    background-color: #fffeed; /* Цвет фона при наведении */
+    /* color: #001643; Цвет текста при наведении */
+    cursor: pointer;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2);
+    transform: scale(
+      1.05
+    ); /* Немного увеличиваем кнопку */ /* Увеличенная тень при наведении */
+    box-shadow: 0px 1.765px 0px 0px #fffeed inset,
+      1.765px 5.295px 0px 0px #001643;
+
+    transition: all 0.3s ease;
+  }
+
+  .button:active {
+    background-color: #000000; /* Затемняем фон */
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2) inset; /* Изменение тени */
+    transform: translateY(2px); /* Небольшое смещение кнопки вниз */
+    box-shadow: 0px 1.765px 0px 0px #fffeed inset,
+      1.765px 5.295px 0px 0px #001643;
+  }
+
+  .button__big {
+    /* width: 335px; */
+    height: 71px;
+    flex-shrink: 0;
+    border-radius: 41.48px;
+    margin-top: 50px;
+
+    flex-shrink: 0;
+    color: #feffed;
+    text-align: center;
+    text-shadow: 0.883px 1.765px 0px rgba(0, 0, 0, 0.5);
+    font-family: Ramona;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 35px; /* 100% */
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+  }
+  .button__colour_purple {
+    background: linear-gradient(49deg, #045ed6 43.82%, #f36ef5 84.05%);
+  }
+
+  .button__colour_green {
+    background: linear-gradient(0deg, #0ccdc1 28.5%, #2bb3ff 100%);
+  }
+
+  .button__colour_yellow {
+    background: linear-gradient(180deg, #ffc15f 42.87%, #f96880 100%);
+  }
+
+  .brd1 * {
+    outline: red solid 1px;
+  }
 }
