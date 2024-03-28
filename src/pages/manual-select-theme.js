@@ -1,7 +1,7 @@
 // manual-select-theme.js
 
 import React from 'react';
-import themes from '../components/themesData';
+import themes from '../utils/themesData';
 import { useNavigate } from 'react-router-dom';
 import { useGameContext } from '../context';
 

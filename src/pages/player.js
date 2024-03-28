@@ -1,5 +1,5 @@
 // player.js
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 import { useGameContext } from '../context';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,20 +7,33 @@ function Player() {
   const {
     getCurrentPlayer,
     gameStarted,
-    numberOfPlayers,
-    currentPlayerIndex,
-    endGame
+    // numberOfPlayers,
+    // currentPlayerIndex,
+    // endGame
   } = useGameContext();
 
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!gameStarted) {
-      // saveGameState();
-      navigate('/finish');
-    }
-  }, [gameStarted, currentPlayerIndex, numberOfPlayers, navigate, endGame]);
+  // useEffect(() => {
+  //   if (!gameStarted) {
+  //     // saveGameState();
+  //     // console.log(`gameStarted: ${gameStarted}`);
+  //     navigate('/finish');
+  //   }
+  // }, [gameStarted, currentPlayerIndex, numberOfPlayers, navigate, endGame]);
+  
+
+  // const handleNextPlayerOrFinishGame = () => {
+  //   if (currentPlayerIndex < numberOfPlayers - 1) {
+  //     moveToNextPlayer();
+  //     // saveGameState();
+  //     navigate('/player');
+  //   } else {
+  //     console.log(`navigate('/finish')`);
+  //     navigate('/finish');
+  //   }
+  // };
 
   const currentPlayer = getCurrentPlayer();
 

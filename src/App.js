@@ -17,7 +17,6 @@ function App() {
   return (
     <Router>
       <GameProvider>
-        <div className='root brd'>
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/rules" element={<Rules />} />
@@ -29,7 +28,6 @@ function App() {
             <Route path="/next-player" element={<NextPlayer />} />
             <Route path="/finish" element={<Finish />} />
           </Routes>
-        </div>
       </GameProvider>
     </Router>
   );

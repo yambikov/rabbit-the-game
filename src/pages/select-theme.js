@@ -1,6 +1,6 @@
 // select-theme.js
 import React, { useState, useEffect } from 'react';
-import themes from '../components/themesData';
+import themes from '../utils/themesData';
 import { useGameContext } from '../context';
 import { useNavigate } from'react-router-dom';
 

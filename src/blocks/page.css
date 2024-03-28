@@ -1,0 +1,62 @@
+.page__container {
+  max-width: 316px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 0 10px;
+}
+
+.page__title {
+  margin: 0;
+  font-family: "Ramona", sans-serif;
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff7d4;
+  text-shadow: 4px 7px 0 0 #001643;
+  margin-bottom: 20px;
+}
+
+.page__text {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 130%;
+  color: #fff;
+  margin: 0;
+}
+
+.page__scrollable-content {
+  /* max-height: 500px; */
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.page__about-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.page__avatar {
+  border-radius: 9px;
+  width: 127px;
+  height: 177px;
+  margin: 0;
+}
+
+.page__avatar-captions {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 130%;
+  color: #fff7d4;
+  margin: 0;
+}
+
+.page__social-icons {
+  display: flex;
+}

@@ -18,9 +18,9 @@ function SelectPlayers() {
       name: 'Пассажир',
     }));
 
-    // Выбираем случайным образом игрока и помечаем его как "Заяц"
+    // Выбираем случайным образом игрока и помечаем его как "Шпион"
     const rabbitIndex = Math.floor(Math.random() * numberOfPlayers);
-    playersArray[rabbitIndex].name = 'Заяц';
+    playersArray[rabbitIndex].name = 'Шпион';
     // saveGameState();
     // Обновляем массив игроков в контексте
     updatePlayers(playersArray);
