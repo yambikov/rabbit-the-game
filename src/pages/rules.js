@@ -11,7 +11,7 @@ function Rules() {
   };
 
   return (
-    <div className='page__container brd'>
+    <div className='page'>
       <h2 className='page__title'>Правила</h2>
       <div className="page__scrollable-content">
         <p className='page__text'>

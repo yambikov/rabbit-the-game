@@ -1,0 +1,39 @@
+.donate__about-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.donate__avatar {
+  border-radius: 9px;
+  /* width: 127px;
+  height: 177px; */
+  width: 25vh;
+  margin: 5px auto;
+}
+
+.donate__avatar-captions {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 130%;
+  color: #fff7d4;
+  margin: 5px 0 0;
+}
+
+.donate__social-icons {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, 30px);
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  line-height: 0;
+}
+
+.donate__social-icon {
+  height: 30px;
+  width: 30px;
+}
+
+

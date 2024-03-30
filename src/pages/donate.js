@@ -2,18 +2,32 @@
 
 import React from "react"
 import {useNavigate} from "react-router-dom"
-import avatarImage from '../images/avatar.jpg';
+import avatarImage from "../images/avatar.jpg"
+import tgIcon from "../images/tg-icon.svg"
+import vkIcon from "../images/vk-icon.svg"
+import backButtonImage from "../images/button-back.svg"
 
 function Donate() {
   const navigate = useNavigate()
 
   const handleDonateClickSber = () => {
-    window.open("https://messenger.online.sberbank.ru/sl/3EGCVzFTYudCHdy3r", "_blank");
-  };
+    window.open(
+      "https://messenger.online.sberbank.ru/sl/3EGCVzFTYudCHdy3r",
+      "_blank"
+    )
+  }
 
   const handleDonateClickTinkoff = () => {
-    window.open("https://www.tinkoff.ru/cf/ATUcqxcURqp", "_blank");
-  };
+    window.open("https://www.tinkoff.ru/cf/ATUcqxcURqp", "_blank")
+  }
+
+  const handleClickSocialTg = () => {
+    window.open("https://t.me/yambikov", "_blank")
+  }
+
+  const handleClickSocialVk = () => {
+    window.open("https://vk.com/yambikov", "_blank")
+  }
 
   const handleBackClick = () => {
     // Вернуть пользователя на домашнюю страницу
@@ -21,19 +35,41 @@ function Donate() {
   }
 
   return (
-    <div className="page__container brd">
-      <button onClick={handleBackClick}>Назад</button>
+    <div className="page">
+      <button className="button__back" onClick={handleBackClick}>
+        <img className="button__back_small" src={backButtonImage} alt="Назад" />
+      </button>
       <h2 className="page__title">На путешествие</h2>
-      <div className="page__about-container">
-        <img className='page__avatar' src={avatarImage} alt="Автор проекта стоит на фоне гор и держит на вытянутых руках велосипед" />
-        <p className="page__avatar-captions">Разработчик: Виктор Ямбиков</p>
-        <ul className="page__social-icons">
-          <li></li>
-          <li></li>
+      <div className="donate__about-container">
+        <img
+          className="donate__avatar"
+          src={avatarImage}
+          alt="Автор проекта стоит на фоне гор и держит на вытянутых вверх руках велосипед"
+        />
+        <p className="donate__avatar-captions">Разработчик: Виктор Ямбиков</p>
+        <ul className="donate__social-icons">
+          <li onClick={handleClickSocialTg}>
+            <img className="donate__social-icon" src={tgIcon} alt="Telegram" />
+          </li>
+          <li onClick={handleClickSocialVk}>
+            <img className="donate__social-icon" src={vkIcon} alt="Vkontakte" />
+          </li>
         </ul>
       </div>
-      <button onClick={handleDonateClickSber}>Сбер</button>
-      <button onClick={handleDonateClickTinkoff}>Тинькофф</button>
+      <div className="page__buttons-container">
+        <button
+          className="button button__small button__color_sber"
+          onClick={handleDonateClickSber}
+        >
+          Сбер
+        </button>
+        <button
+          className="button button__small button__color_tinkoff"
+          onClick={handleDonateClickTinkoff}
+        >
+          Тинькофф
+        </button>
+      </div>
     </div>
   )
 }

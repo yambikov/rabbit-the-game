@@ -1,9 +1,14 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts/fonts.css);
+@import url(./blocks/page.css);
+@import url(./blocks/button.css);
+@import url(./blocks/donate.css);
+@import url(./blocks/select-players.css);
 
 .brd * {
   outline: solid 1px red;
 }
+
 
 body,
 html {
@@ -23,6 +28,7 @@ body {
     monospace;
 } */
 
+
 #root {
   height: 100%;
   width: 100%;
@@ -36,189 +42,9 @@ body {
   align-items: stretch;
 }
 
-@import url(./blocks/page.css);
-@import url(./blocks/button.css);
-
-
-/*
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-  align-items: stretch;
-  position: relative;
-  overflow: hidden;
-}
-
-.main__img {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.5);
-  height: auto;
-  z-index: 0;
-  margin-top: 80px;
-}
-
-.main__buttons-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 48px 60px 48px;
-  align-items: stretch;
-  z-index: 1;
-}
-
-
-
-@media only screen and (max-width: 800px) {
-
-}
-
-
-@media only screen and (min-width: 800px) and (max-width: 1024px) {
-
-}
-
-
-@media only screen and (min-width: 1024px) {
-
-}
-
-
-
-
-.main__header {
-  margin: 0;
-  color: #fff7d4;
-  text-shadow: 4px 11px 0px #001643;
-  font-family: "RF Krabuler";
-  font-size: 800%;
-  font-style: normal;
-  font-weight: 400;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  z-index: 1;
-}
-
-.button {
-  box-shadow: 0px 1.765px 0px 0px #fffeed inset, 1.765px 5.295px 0px 0px #001643;
-  border: none;
-  transition: all 0.3s ease;
-}
-
-.button:hover {
-  cursor: pointer;
-  background-color: #fffeed; 
-  cursor: pointer;
-  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2);
-  transform: scale(
-    1.05
-  ); 
-  box-shadow: 0px 1.765px 0px 0px #fffeed inset, 1.765px 5.295px 0px 0px #001643;
-
-  transition: all 0.3s ease;
-}
-
-.button:active {
-  background-color: #e0e0e0;
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5) inset; 
-  transform: translateY(2px);
-}
-
-.button__big {
-  height: 71px;
-  flex-shrink: 0;
-  border-radius: 41.48px;
-  margin-top: 50px;
-
-  flex-shrink: 0;
-  color: #feffed;
-  text-align: center;
-  text-shadow: 0.883px 1.765px 0px rgba(0, 0, 0, 0.5);
-  font-family: Ramona;
-  font-size: 35px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 35px; 
-  letter-spacing: 0.35px;
-  text-transform: uppercase;
-}
-.button__colour_purple {
-  background: linear-gradient(49deg, #045ed6 43.82%, #f36ef5 84.05%);
-}
-
-.button__colour_green {
-  background: linear-gradient(0deg, #0ccdc1 28.5%, #2bb3ff 100%);
-}
-
-.button__colour_yellow {
-  background: linear-gradient(180deg, #ffc15f 42.87%, #f96880 100%);
-}
-
-.brd1 * {
-  outline: red solid 1px;
-}
-
-@media screen and (max-width: 375px) {
-
-  .main__header {
-    margin-top: 20px;
-    font-size: 100px;
-  }
-
-  .button__big {
-    margin-top: 10px;
-    font-size: 30px;
-  }
-
-  .main__buttons-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 24px 40px 24px;
-    align-items: stretch;
-    z-index: 1;
+@media (orientation: landscape) {
+  #root {
+    height: auto;
   }
 }
 
-.page__title {
-  font-family: "Ramona", sans-serif;
-  font-weight: 300;
-  font-size: 40px;
-  line-height: 125%;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #fff7d4;
-  margin: 0;
-}
-
-.page__text {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 21px;
-  line-height: 130%;
-
-  color: #fff;
-
-}
-
-.rules {
-  background: #010135;
-}
-
-.page__container {
-  display: flex;
-  flex-direction: column;
-  padding: 30px 22px 40px;
-}
-
-*/

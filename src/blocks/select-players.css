@@ -1,0 +1,13 @@
+.select-players__number {
+  font-family: "RF Krabuler", sans-serif;
+  font-weight: 400;
+  font-size: 100px;
+  text-align: center;
+  color: #fff7d4;
+  text-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.select-players__buttons-container {
+  display: flex;
+  justify-content: space-around;
+}
