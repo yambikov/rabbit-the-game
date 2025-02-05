@@ -104,7 +104,7 @@ const themes = {
     "Скарлетт Йоханссон", "Морган Фриман", "Николь Кидман", "Джонни Депп", "Эмма Стоун", 
     "Джордж Клуни", "Юрий Никулин", "Уилл Смит", "Евгений Леонов", "Андрей Миронов"
   ],
-  "Популярные мобильные приложения": [
+  "Популярные приложения": [
     "WhatsApp", "Instagram", "TikTok", "Facebook", "Snapchat", "Spotify", "Uber", 
     "Airbnb", "Netflix", "YouTube", "Google Maps", "Twitter", "LinkedIn", "Pinterest", 
     "Telegram", "WeChat", "Zoom", "Slack", "Amazon", "Shazam"

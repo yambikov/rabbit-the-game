@@ -36,10 +36,16 @@ function Donate() {
 
   return (
     <div className="page">
-      <button className="button__back" onClick={handleBackClick}>
-        <img className="button__back_small" src={backButtonImage} alt="Назад" />
-      </button>
-      <h2 className="page__title">На путешествие</h2>
+      <div className="page__content-container">
+        <button className="button__back" onClick={handleBackClick}>
+          <img
+            className="button__back_small"
+            src={backButtonImage}
+            alt="Назад"
+          />
+        </button>
+        <h2 className="page__title">На путешествие</h2>
+      </div>
       <div className="donate__about-container">
         <img
           className="donate__avatar"

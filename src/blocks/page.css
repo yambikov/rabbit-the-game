@@ -8,8 +8,6 @@
   padding: 0 10px;
 }
 
-
-
 .page__hero {
   font-family: "RF Krabuler", sans-serif;
   font-weight: 400;
@@ -30,11 +28,12 @@
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 0.04em;
+  line-height: 125%;
   text-transform: uppercase;
   text-align: center;
   color: #fff7d4;
   text-shadow: 4px 7px 0 0 #001643;
-  margin: 10px 0;
+  margin: 10px 0 0;
 }
 
 .page__text {
@@ -63,4 +62,24 @@
   max-width: 100%;
   width: 35vh;
   height: auto;
+}
+
+.page__selected-theme {
+  font-family: "RF Krabuler", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  text-align: center;
+  color: #fff7d4;
+}
+
+.page__content-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.page__themes-container {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }

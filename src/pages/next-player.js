@@ -10,7 +10,7 @@ function NextPlayer() {
   const navigate = useNavigate();
 
   const currentPlayer = getCurrentPlayer();
-  const displayTheme = currentPlayer?.name === 'Шпион' ? 'Шпион' : currentSubtheme;
+  const displayTheme = currentPlayer?.name === 'Заяц' ? 'Заяц' : currentSubtheme;
 
   const handleNextPlayerOrFinishGame = () => {
     if (currentPlayerIndex < numberOfPlayers - 1) {

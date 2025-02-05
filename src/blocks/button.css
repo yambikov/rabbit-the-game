@@ -90,6 +90,8 @@
   margin: 0;
   line-height: 0;
   padding: 0;
+  display: block;
+  padding: 0 0 10px;
 }
 
 .button__back:hover {
@@ -103,4 +105,17 @@
 
 .button__single {
   margin-top: 50px;
+}
+
+.button__theme {
+  /* width: 180px; */
+  font-family: "RF Krabuler", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 90%;
+  text-align: center;
+  color: #fff7d4;
+  max-width: 100%;
+  padding: 8px 8px;
+  margin: 5px;
 }
