@@ -81,17 +81,6 @@ function ChooseTheme() {
         </button>
       </div>
     </div>
-    // <div>
-    //   <button onClick={handleBackClick}>Назад</button>
-    //   <div>
-    //     <h3>Тема:</h3>
-    //     <p>{selectedTheme}</p>
-    //     <button onClick={handleRandomThemeClick}>Случайная тема</button>
-    //   </div>
-
-    //   <button onClick={handleChooseThemeClick}>Выбрать тему</button>
-    //   <button onClick={handleStartGameClick}>Начать игру</button>
-    // </div>
   )
 }
 

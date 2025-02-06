@@ -19,6 +19,7 @@ function ManualThemeSelection() {
     // Перенаправляем пользователя на страницу игрока
     navigate("/player")
   }
+  
 
   const handleBackClick = () => {
     navigate("/select-theme")
@@ -45,10 +46,11 @@ function ManualThemeSelection() {
         </button>
         <h2 className="page__title">Выбор темы</h2>
       </div>
-      <div className="page__themes-container">
+      <div className="page__themes-container page__scrollable-content">
+        {/* <div className="page__themes-container"> */}
         {shuffle(Object.keys(themes)).map((themeType) => (
           <button
-          className="button button__colour_purple button__theme"
+            className="button button__colour_purple button__theme"
             key={themeType}
             onClick={() => handleThemeButtonClick(themeType)}
           >
@@ -56,6 +58,7 @@ function ManualThemeSelection() {
           </button>
         ))}
       </div>
+      <div></div> {/* Добавляем пустой div для выравнивания */}
     </div>
   )
 }

@@ -56,6 +56,8 @@ export const GameProvider = ({ children }) => {
     return players[currentPlayerIndex] || null;
   };
 
+  console.log(`currentPlayerIndex: ${getCurrentPlayer()}`);
+
   const moveToNextPlayer = () => {
     if (currentPlayerIndex < numberOfPlayers - 1) {
       setCurrentPlayerIndex(currentPlayerIndex + 1);
