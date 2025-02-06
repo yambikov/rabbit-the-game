@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.16af3d9a.css",
+    "main.css": "./static/css/main.8196c927.css",
     "main.js": "./static/js/main.229cf01a.js",
     "static/js/453.d719afab.chunk.js": "./static/js/453.d719afab.chunk.js",
     "static/media/Ramona-Light.ttf": "./static/media/Ramona-Light.0b8764bdfbcaeb60e04b.ttf",
@@ -12,12 +12,12 @@
     "static/media/vk-icon.svg": "./static/media/vk-icon.5ad1aa9499cc682bbb6fe4c3a37a5433.svg",
     "index.html": "./index.html",
     "static/media/button-back.svg": "./static/media/button-back.39fb19cc02d8994ba6c54cba078f2d21.svg",
-    "main.16af3d9a.css.map": "./static/css/main.16af3d9a.css.map",
+    "main.8196c927.css.map": "./static/css/main.8196c927.css.map",
     "main.229cf01a.js.map": "./static/js/main.229cf01a.js.map",
     "453.d719afab.chunk.js.map": "./static/js/453.d719afab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.16af3d9a.css",
+    "static/css/main.8196c927.css",
     "static/js/main.229cf01a.js"
   ]
 }
