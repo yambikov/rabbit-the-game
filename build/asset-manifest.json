@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "./static/css/main.16af3d9a.css",
+    "main.js": "./static/js/main.229cf01a.js",
+    "static/js/453.d719afab.chunk.js": "./static/js/453.d719afab.chunk.js",
+    "static/media/Ramona-Light.ttf": "./static/media/Ramona-Light.0b8764bdfbcaeb60e04b.ttf",
+    "static/media/Ramona-Bold.ttf": "./static/media/Ramona-Bold.7fbe251d790a51537578.ttf",
+    "static/media/avatar.jpg": "./static/media/avatar.4d348ff3a4af90248f1a.jpg",
+    "static/media/spy.jpg": "./static/media/spy.07d61fe0dd173607d4de.jpg",
+    "static/media/RFKrabuler-Regular.woff2": "./static/media/RFKrabuler-Regular.1eb7c25776cc3dc60a25.woff2",
+    "static/media/tg-icon.svg": "./static/media/tg-icon.b39684d8a8c2a548aec79bb7f6c09a34.svg",
+    "static/media/vk-icon.svg": "./static/media/vk-icon.5ad1aa9499cc682bbb6fe4c3a37a5433.svg",
+    "index.html": "./index.html",
+    "static/media/button-back.svg": "./static/media/button-back.39fb19cc02d8994ba6c54cba078f2d21.svg",
+    "main.16af3d9a.css.map": "./static/css/main.16af3d9a.css.map",
+    "main.229cf01a.js.map": "./static/js/main.229cf01a.js.map",
+    "453.d719afab.chunk.js.map": "./static/js/453.d719afab.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16af3d9a.css",
+    "static/js/main.229cf01a.js"
+  ]
+}
