@@ -1,10 +1,10 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import themes from './components/themesData';
+import themes from './utils/themesData';
 
 const GameContext = createContext();
 
 export const GameProvider = ({ children }) => {
-  const [numberOfPlayers, setNumberOfPlayers] = useState(4); // Установите значение по умолчанию, например, 4
+  const [numberOfPlayers, setNumberOfPlayers] = useState(4);
   const [players, setPlayers] = useState([]);
   const [currentTheme, setCurrentTheme] = useState('');
   const [currentSubtheme, setCurrentSubtheme] = useState('');
@@ -22,21 +22,28 @@ export const GameProvider = ({ children }) => {
       setCurrentSubtheme(state.currentSubtheme);
       setCurrentPlayerIndex(state.currentPlayerIndex);
       setGameStarted(state.gameStarted);
+      console.log('page updated');
+      console.log(state);
+    } else {
+      console.log('do nothing');
     }
   }, []);
 
-  useEffect(() => {
-    saveGameState();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [numberOfPlayers, players, currentTheme, currentSubtheme, currentPlayerIndex, gameStarted]);
-
   const updateNumberOfPlayers = (newNumberOfPlayers) => {
     setNumberOfPlayers(newNumberOfPlayers);
+
   };
 
   const updatePlayers = (newPlayers) => {
     setPlayers(newPlayers);
   };
+
+  useEffect(() => {
+    saveGameState();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [numberOfPlayers, players, currentTheme, currentSubtheme, currentPlayerIndex, gameStarted]);
+
+
 
 
   const chooseRandomSubtheme = (theme) => {
@@ -48,6 +55,8 @@ export const GameProvider = ({ children }) => {
   const getCurrentPlayer = () => {
     return players[currentPlayerIndex] || null;
   };
+
+  console.log(`currentPlayerIndex: ${getCurrentPlayer()}`);
 
   const moveToNextPlayer = () => {
     if (currentPlayerIndex < numberOfPlayers - 1) {
@@ -65,34 +74,34 @@ export const GameProvider = ({ children }) => {
 
 
   const endGame = () => {
-    // setCurrentPlayerIndex(0);
-    // setGameStarted(false);
-    // setCurrentTheme('');
-    // setCurrentSubtheme(''); // Сброс подтемы в конце игры
   };
 
   const resetGame = () => {
+    console.log('resetGame');
+    sessionStorage.removeItem('gameState');
     setNumberOfPlayers(4);
     setPlayers([]);
-    setCurrentPlayerIndex(0);
-    setCurrentSubtheme('');
     setCurrentTheme('');
+    setCurrentSubtheme('');
+    setCurrentPlayerIndex(0);
     setGameStarted(false);
-    // sessionStorage.removeItem('gameState');
+
   };
 
   const saveGameState = () => {
-    const state = {
-      numberOfPlayers,
-      players,
-      currentTheme,
-      currentSubtheme,
-      currentPlayerIndex,
-      gameStarted,
-    };
-    console.log('Saving game state:', state);
-    sessionStorage.setItem('gameState', JSON.stringify(state));
+    if (gameStarted) {
+      const state = {
+        numberOfPlayers,
+        players,
+        currentTheme,
+        currentSubtheme,
+        currentPlayerIndex,
+        gameStarted,
+      };
+      sessionStorage.setItem('gameState', JSON.stringify(state));
+    }
   };
+
 
   return (
     <GameContext.Provider

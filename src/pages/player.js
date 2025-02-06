@@ -1,44 +1,40 @@
 // player.js
-import React, { useEffect } from 'react';
-import { useGameContext } from '../context';
-import { useNavigate } from 'react-router-dom';
+
+import {useGameContext} from "../context"
+import {useNavigate} from "react-router-dom"
 
 function Player() {
-  const {
-    getCurrentPlayer,
-    gameStarted,
-    numberOfPlayers,
-    currentPlayerIndex,
-    endGame
-  } = useGameContext();
+  const {getCurrentPlayer, gameStarted} = useGameContext()
 
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!gameStarted) {
-      // saveGameState();
-      navigate('/finish');
-    }
-  }, [gameStarted, currentPlayerIndex, numberOfPlayers, navigate, endGame]);
-
-  const currentPlayer = getCurrentPlayer();
+  const navigate = useNavigate()
+  const currentPlayer = getCurrentPlayer()
 
   const handleOpenWordClick = () => {
-    navigate('/next-player');
-  };
-
-  if (!gameStarted) {
-    return null;
+    navigate("/next-player")
   }
 
+  if (!gameStarted) {
+    return null
+  }
+
+  console.log(`currentPlayer: ${currentPlayer}`)
+
   return (
-    <div>
-      <h2>Игрок</h2>
-      <p>ID игрока: {currentPlayer?.id}</p>
-      <button onClick={handleOpenWordClick}>Открыть слово</button>
+    <div className="page">
+      <div></div> {/*Для выравнивания*/}
+      <div className="page__content-container">
+        <h2 className="page__hero">Игрок {currentPlayer?.id}</h2>
+      </div>
+      <div className="page__buttons-container">
+        <button
+          className="button button__small button__colour_yellow"
+          onClick={handleOpenWordClick}
+        >
+          Открыть слово
+        </button>
+      </div>
     </div>
-  );
+  )
 }
 
-export default Player;
+export default Player

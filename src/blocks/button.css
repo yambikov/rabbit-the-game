@@ -1,0 +1,118 @@
+.button {
+  box-shadow: 0px 1.765px 0px 0px #fffeed inset, 1.765px 5.295px 0px 0px #001643;
+  border: none;
+  transition: all 0.3s ease;
+  font-family: Ramona;
+  text-transform: uppercase;
+  color: #feffed;
+  text-align: center;
+  text-shadow: 0.883px 1.765px 0px rgba(0, 0, 0, 0.5);
+  font-style: normal;
+  font-weight: 700;
+  border-radius: 41.48px;
+  flex-shrink: 0;
+  letter-spacing: 0.35px;
+  line-height: 0;
+}
+
+.button:hover {
+  cursor: pointer;
+  cursor: pointer;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1.765px 0px 0px #fffeed inset, 1.765px 5.295px 0px 0px #001643;
+
+  transition: all 0.3s ease;
+}
+
+.button:active {
+  background-color: #e0e0e0;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5) inset;
+  transform: translateY(2px);
+}
+
+.button__big {
+  height: 71px;
+  font-size: 35px;
+  line-height: 35px;
+}
+
+.button__small {
+  height: 40px;
+  font-size: 23px;
+  line-height: 23px;
+}
+
+.button__round {
+  height: 50px;
+  width: 50px;
+  font-weight: 700;
+  font-size: 50px;
+  text-align: center;
+  color: #feffed;
+  padding: 0;
+}
+
+.button__colour_purple {
+  background: linear-gradient(49deg, #045ed6 43.82%, #f36ef5 84.05%);
+}
+
+.button__colour_green {
+  background: linear-gradient(0deg, #0ccdc1 28.5%, #2bb3ff 100%);
+}
+
+.button__colour_yellow {
+  background: linear-gradient(180deg, #ffc15f 42.87%, #f96880 100%);
+}
+
+.button__color_sber {
+  background: #219f38;
+  text-shadow: none;
+}
+
+.button__color_tinkoff {
+  background: #ffdd2d;
+  color: #001643;
+  text-shadow: none;
+}
+
+.button__back_small {
+  width: 30px;
+  height: auto;
+  display: flex;
+}
+
+.button__back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  line-height: 0;
+  padding: 0;
+  display: block;
+  padding: 0 0 10px;
+}
+
+.button__back:hover {
+  opacity: 0.8; /* Пример стиля при наведении на кнопку "Назад" */
+}
+
+.button__disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button__single {
+  margin-top: 50px;
+}
+
+.button__theme {
+  font-family: "RF Krabuler", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 90%;
+  text-align: center;
+  color: #fff7d4;
+  max-width: 100%;
+  padding: 8px 8px;
+  margin: 5px;
+}

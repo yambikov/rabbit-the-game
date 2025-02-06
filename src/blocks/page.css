@@ -1,0 +1,85 @@
+.page {
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px 0 30px;
+  padding: 0 10px;
+}
+
+.page__hero {
+  font-family: "RF Krabuler", sans-serif;
+  font-weight: 400;
+  font-size: 80px;
+  text-transform: uppercase;
+  color: #fff7d4;
+  text-shadow: 4px 11px 0 0 #001643;
+  margin: 0;
+  text-align: center;
+  margin-inline: 0;
+  margin-block: 0;
+  line-height: 100%;
+}
+
+.page__title {
+  margin: 0;
+  font-family: "Ramona", sans-serif;
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  line-height: 125%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff7d4;
+  text-shadow: 4px 7px 0 0 #001643;
+  margin: 10px 0 0;
+}
+
+.page__text {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 130%;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.page__scrollable-content {
+  /* max-height: 500px; */
+  overflow-y: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.page__buttons-container {
+  display: grid;
+  gap: 16px;
+}
+
+.page__img {
+  margin: 10px auto;
+  max-width: 100%;
+  width: 35vh;
+  height: auto;
+}
+
+.page__selected-theme {
+  font-family: "RF Krabuler", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  text-align: center;
+  color: #fff7d4;
+}
+
+.page__content-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.page__themes-container {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
