@@ -11,8 +11,6 @@ function Main() {
 
   const handlePlayClick = () => {
     resetGame()
-    // saveGameState();
-
     navigate("/select-players")
   }
 

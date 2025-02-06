@@ -74,11 +74,6 @@ export const GameProvider = ({ children }) => {
 
 
   const endGame = () => {
-    // setCurrentPlayerIndex(0);
-    // setGameStarted(false);
-    // setCurrentTheme('');
-    // setCurrentSubtheme(''); // Сброс подтемы в конце игры
-    console.log('end game');
   };
 
   const resetGame = () => {
@@ -92,21 +87,6 @@ export const GameProvider = ({ children }) => {
     setGameStarted(false);
 
   };
-
-  // const saveGameState = () => {
-  //   const state = {
-  //     numberOfPlayers,
-  //     players,
-  //     currentTheme,
-  //     currentSubtheme,
-  //     currentPlayerIndex,
-  //     gameStarted,
-  //   };
-  //   console.log('saveGameState');
-  //   sessionStorage.setItem('gameState', JSON.stringify(state));
-  // };
-
-
 
   const saveGameState = () => {
     if (gameStarted) {

@@ -20,7 +20,6 @@ function NextPlayer() {
   const handleNextPlayerOrFinishGame = () => {
     if (currentPlayerIndex < numberOfPlayers - 1) {
       moveToNextPlayer()
-      // saveGameState();
       navigate("/player")
     } else {
       console.log(`navigate('/finish')`)

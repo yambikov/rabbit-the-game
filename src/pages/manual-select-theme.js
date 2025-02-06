@@ -47,7 +47,6 @@ function ManualThemeSelection() {
         <h2 className="page__title">Выбор темы</h2>
       </div>
       <div className="page__themes-container page__scrollable-content">
-        {/* <div className="page__themes-container"> */}
         {shuffle(Object.keys(themes)).map((themeType) => (
           <button
             className="button button__colour_purple button__theme"

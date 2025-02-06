@@ -19,9 +19,10 @@ function SelectPlayers() {
     // Выбираем случайным образом игрока и помечаем его как "Заяц"
     const rabbitIndex = Math.floor(Math.random() * numberOfPlayers)
     playersArray[rabbitIndex].name = "Заяц"
-    // saveGameState();
+ 
     // Обновляем массив игроков в контексте
     updatePlayers(playersArray)
+    
     // Обновляем количество игроков в контексте
     updateNumberOfPlayers(numberOfPlayers)
 

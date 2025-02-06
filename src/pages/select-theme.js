@@ -43,7 +43,6 @@ function ChooseTheme() {
   const handleStartGameClick = () => {
     startGame(selectedTheme) // Начать игру с выбранной темой
     chooseRandomSubtheme(selectedTheme) // Выбираем случайную подтему
-    // saveGameState(); // Сохранение состояния игры
     navigate("/player")
   }
 

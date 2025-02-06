@@ -10,7 +10,6 @@ const Finish = () => {
 
   const handleHomeClick = () => {
     resetGame();
-    // saveGameState();
     navigate('/');
   };
 
