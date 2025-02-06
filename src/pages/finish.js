@@ -16,10 +16,21 @@ const Finish = () => {
   };
 
   return (
-    <div>
-      <h1>Игра окончена!</h1>
-      <button onClick={handleHomeClick}>Домой</button>
-    </div>
+    // <div>
+    //   <h1>Раунд закончен</h1>
+    //   <button onClick={handleHomeClick}>Домой</button>
+    // </div>
+        <div className="page">
+        <div></div>
+        <div className="page__content-container">
+          <h2 className="page__title">Раунд закончен</h2>
+        </div>
+        <div className="page__buttons-container">
+          <button 
+          className="button button__small button__colour_yellow"
+          onClick={handleHomeClick}>Начать обсуждение</button>
+        </div>
+      </div>
   );
 };
 

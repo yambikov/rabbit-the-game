@@ -15,7 +15,7 @@ function NextPlayer() {
   const navigate = useNavigate()
 
   const currentPlayer = getCurrentPlayer()
-  const displayTheme = currentPlayer?.name === "Заяц" ? "Заяц" : currentSubtheme
+  const displayTheme = currentPlayer?.name === "Заяц" ? "Ты заяц" : currentSubtheme
 
   const handleNextPlayerOrFinishGame = () => {
     if (currentPlayerIndex < numberOfPlayers - 1) {
@@ -31,15 +31,9 @@ function NextPlayer() {
   const nextButtonText =
     currentPlayerIndex < numberOfPlayers - 1
       ? "Следующий игрок"
-      : "Закончить игру"
+      : "Закончить раунд"
 
   return (
-    // <div>
-    //   <p>Имя игрока: {currentPlayer?.name}</p>
-    //   <p>ID игрока: {currentPlayer?.id}</p>
-    //   <p>Тема для игрока: {displayTheme}</p>
-    //   <button onClick={handleNextPlayerOrFinishGame}>{nextButtonText}</button>
-    // </div>
     <div className="page">
       <div className="page__content-container">
         <h2 className="page__title">Слово</h2>
