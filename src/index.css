@@ -43,9 +43,9 @@ body {
   align-items: stretch;
 }
 
-@media (orientation: landscape) {
+/* @media (orientation: landscape) {
   #root {
     height: auto;
   }
-}
+} */
 

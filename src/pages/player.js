@@ -46,11 +46,6 @@ function Player() {
   console.log(`currentPlayer: ${currentPlayer}`)
 
   return (
-    // <div>
-    //   <h2>Игрок</h2>
-    //   <p>ID игрока: {currentPlayer?.id}</p>
-    //   <button onClick={handleOpenWordClick}>Открыть слово</button>
-    // </div>
     <div className="page">
       <div></div> {/*Для выравнивания*/}
       <div className="page__content-container">

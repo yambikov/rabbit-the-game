@@ -5,8 +5,9 @@
   flex-direction: column;
   justify-content: space-between;
   /* margin: 20px 0; */
-  margin:20px 0 40px;
+  margin: 20px 0 30px;
   padding: 0 10px;
+  /* max-height: 1000px; */
 }
 
 .page__hero {
@@ -40,7 +41,7 @@
 .page__text {
   font-family: "Inter", sans-serif;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 130%;
   color: #fff;
   margin-top: 10px;
